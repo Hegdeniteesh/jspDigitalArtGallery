@@ -1,0 +1,116 @@
+@charset "UTF-8";body
+{
+    background-color:black;
+}
+#DAGtitle       
+{
+    position:absolute; 
+    top: 36px; 
+    left: 0px; 
+    font-size: 38pt;
+    width: 100%; 
+    height: 83px; 
+    margin-right: 0px;
+    text-align: center;
+    border-bottom:1px solid white; 
+}
+.title_name
+{
+    text-align: center;
+    font-size: 48pt;
+    color: #FFFFFF;
+    font-family: "Raleway Thin";
+}
+#titleOutsideBox
+{
+    width: 100%;
+}
+#Image1
+{
+    Height: 117px; 
+    Width: 159px;
+}
+.container
+{
+    position: relative;
+    display: inline-block;
+    border: 2px solid white;
+}
+.container:hover 
+{
+    border: 2px solid cyan;
+}
+.hmImg1
+{
+    height: 340px; 
+    width: 400px;
+    filter: blur(2px);
+}
+.imgtext
+{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    font-size: 30px;
+    color: white;
+}
+.container:hover .hmImg1
+{
+    opacity: 20%;
+}
+#contLeft
+{
+    left: 50px;
+}
+#contMid
+{
+    left: 150px;
+}
+#contRight
+{
+    left: 250px;
+}
+.hamButton
+{
+    background-color:black; 
+    color: white;
+    height: 38px; 
+    width: 38px;
+    font-size: 27px;
+}
+.hamButton:hover
+{
+  color: cyan;
+}
+#navBack
+{
+    display: none; 
+    background-color: black;
+    border: 2px solid cyan; 
+    width: 15%; 
+    height: auto;
+    z-index: 1;
+    position: absolute;
+}
+td.menuLine
+{
+    height: 30px;
+    border: 1px solid #7ca4c1;
+    text-align: center;
+}
+a.menuLink
+{
+    color: white;
+    font-family: Raleway;
+    font-weight: bold;
+}
+.allContainer
+{
+    position: relative;
+    z-index: 0;
+}
+.PageEnd
+{
+    background-color:cyan;
+    margin-bottom: auto;
+}

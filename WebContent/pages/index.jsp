@@ -10,7 +10,7 @@
     <script src="<%= request.getContextPath() %>/script/mainPagescript.js"></script>
 </head>
 <body>
-    <form id="form1" method="post" action="login.jsp">
+    <form id="form1" method="post">
 		<div style="display: none;"><!--Hides the menu bar but allows the session to start -->
             <%@ include file="menuBar.jsp" %> <!-- Includes menu button with logged username -->
         </div>
@@ -51,7 +51,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="border-radius: 0px 0px 25px 25px; text-align:center; background-color:#0f0e0e;">
-                        <a class="menuLink" href="<%= request.getContextPath() %>/pages/signup.jsp">Create Account</a>
+                        <a class="menuLink" href="<%= request.getContextPath() %>/pages/signUp.jsp">Create Account</a>
                     </td>
                 </tr>
             </table>

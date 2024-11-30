@@ -3,7 +3,7 @@
 
 <%
     // Start or retrieve the session
-    HttpSession session = request.getSession(false);
+    // HttpSession session = request.getSession(false);
 
     // Redirect to login page if session attribute 'logger' is not set
     if (session == null || session.getAttribute("logger") == null) {

@@ -12,7 +12,7 @@
         con = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
         // Retrieve 'metric' from session, equivalent to `$_SESSION['metric']` in PHP
-        HttpSession session = request.getSession(false);
+        // HttpSession session = request.getSession(false);
         String metric = (session != null) ? (String) session.getAttribute("metric") : null;
 
         if (metric != null) {

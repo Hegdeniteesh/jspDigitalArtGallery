@@ -18,7 +18,7 @@ function enterVis() {
    location.href="http://localhost/mp/pages/visualfx.jsp";
 }
 function signup() {
-    location.href="http://localhost/mp/pages/login.jsp";
+    location.href="http://localhost/mp/pages/index.jsp";
 }
 // opens or closes the hamburger button
 function openHam() {

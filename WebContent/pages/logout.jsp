@@ -18,8 +18,8 @@
         
         <% 
             // Retrieve the logged-in user's session attribute
-            HttpSession session = request.getSession(false);
-            String logger = (session != null) ? (String) session.getAttribute("logger") : null;
+           // HttpSession session = request.getSession(false);
+          // 	String logger = (session != null) ? (String) session.getAttribute("logger") : null;
 
             if (logger != null && !logger.isEmpty()) {
                 // Display the logged-in username, removing "Signed in as,"

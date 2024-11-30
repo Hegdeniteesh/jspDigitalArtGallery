@@ -7,10 +7,9 @@
 </head>
 <body>
     <form id="form1">
-    <% 
-        include("topTitle.jsp"); // includes title and logo of page
-        include("menuBar.jsp"); // includes menu button along with logged username
-    %>
+    <jsp:include page="topTitle.jsp" />
+	<jsp:include page="menuBar.jsp" />
+
     <br>
     <p class="pageTitle">CATEGORY: Character</p>
     <%  // Trying to access through URL without logging in will result in redirection to login page

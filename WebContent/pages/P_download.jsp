@@ -1,4 +1,5 @@
 <%@ page import="java.sql.*" %>
+<%@ page import="java.net.URLEncoder" %>
 <% 
     // Database connection
     Connection con = null;
@@ -7,6 +8,10 @@
 
     String userSession = (String) session.getAttribute("metric");
     String status = null;
+
+    // Retrieve the 'link' from the request
+    String link = request.getParameter("link");
+    String nm = link != null ? link.substring(link.lastIndexOf("/") + 1) : "default_image.png"; // Extract filename
 
     try {
         // Establish database connection

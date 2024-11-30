@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="javax.servlet.http.*" %>
+<%@ page import="jakarta.servlet.http.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@
 </head>
 <body>
     <% 
-        HttpSession session = request.getSession(false);
+   //     HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("logger") == null) {
             response.sendRedirect("index.jsp");
             return;

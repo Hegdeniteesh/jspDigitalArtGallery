@@ -92,25 +92,28 @@
             String username = request.getParameter("Username");
             String password = request.getParameter("Password");
             String email = request.getParameter("Email");
-
+			
+            out.print("Full Name: " + fullname + ", Username: " + username + 
+                    ", Password: " + password + ", Email: " + email);
             Connection conn = null;
             PreparedStatement pstmt = null;
 
             try {
                 // Database connection setup
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/usermp5", "root", "root");
-
+                
                 // Insert query
-                String sql = "INSERT INTO custname (fullname, username, password, email, status, subEnd, counter) VALUES (?, ?, ?, ?, 'free', NOW(), 0)";
+                String sql = "INSERT INTO custname VALUES (?, ?, ?, ?, 'free', NOW(), 0)";
                 pstmt = conn.prepareStatement(sql);
-
+                if (pstmt != null) 
+                	out.print("connected");
                 pstmt.setString(1, fullname);
                 pstmt.setString(2, username);
                 pstmt.setString(3, password);
                 pstmt.setString(4, email);
 
                 int result = pstmt.executeUpdate();
-
+                out.print(result);
                 if (result > 0) {
                     out.println("<script>alert('Sign-Up Successful! Please log in.'); window.location.href='index.jsp';</script>");
                 } else {

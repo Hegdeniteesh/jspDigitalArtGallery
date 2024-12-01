@@ -100,10 +100,6 @@
                 out.println("<p style='color:red;'>Error closing connection: " + e.getMessage() + "</p>");
             }
         }
-    }
-
-    // Display message if the connection is successful
-    if (isConnected) {
-        out.println("<p style='color:green;'>Database connection successful!</p>");
+        
     }
 %>

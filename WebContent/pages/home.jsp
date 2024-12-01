@@ -24,7 +24,8 @@
     <form id="form1">
         <%@ include file="topTitle.jsp" %> <!-- includes title and logo of page -->
         <%@ include file="menuBar.jsp" %> <!-- includes menu button along with logged username -->
-        
+       <jsp:include page="sub_validDb.jsp" />
+
         <br>
         <!-- different category images with links to their pages upon clicking -->
         <div class="allContainer">

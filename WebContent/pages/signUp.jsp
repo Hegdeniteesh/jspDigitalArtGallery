@@ -98,8 +98,7 @@
 
             try {
                 // Database connection setup
-                Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/usermp5", "root", "");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/usermp5", "root", "root");
 
                 // Insert query
                 String sql = "INSERT INTO custname (fullname, username, password, email, status, subEnd, counter) VALUES (?, ?, ?, ?, 'free', NOW(), 0)";

@@ -26,7 +26,7 @@
                 <td class="menuLine"><a class="menuLink" href="<%= request.getContextPath() %>/pages/premium.jsp">Buy Premium</a></td>
             </tr>
             <tr>
-                <td class="menuLine"><a class="menuLink" href="<%= request.getContextPath() %>/pages/TnC.jsp">Terms and Conditions</a></td>
+                <td class="menuLine"><a class="menuLink" href="<%= request.getContextPath() %>/pages/Tnc.jsp">Terms and Conditions</a></td>
             </tr>
             <tr>
                 <td class="menuLine"><a class="menuLink" href="mailto:lakshithpc666@gmail.com?subject=Digital art gallery">Contact us</a></td>

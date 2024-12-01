@@ -25,7 +25,7 @@
             }
         %>
         <br>
-        <center>
+      <center> 
             <p class="pageTitle">Admin Page</p>
             <br>
             <label class="tnc">Total logins on date:</label>
@@ -58,9 +58,8 @@
                         String customQuery2 = request.getParameter("customQuery2");
                         String selectedQuery = (query != null && !query.isEmpty()) ? query : customQuery2;
 
-                        if (selectedQuery != null && !selectedQuery.isEmpty()) {
                             try {
-                                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mp", "username", "password");
+                                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/usermp5", "root", "root");
                                 Statement stmt = conn.createStatement();
                                 ResultSet rs = stmt.executeQuery(selectedQuery);
 
@@ -85,13 +84,10 @@
                             } catch (Exception e) {
                                 out.println("Error: " + e.getMessage());
                             }
-                        } else {
-                            out.println("No query provided.");
-                        }
                     }
                 %>
             </p>
-        </center>
+      </center> 
     </form>
 </body>
 </html>

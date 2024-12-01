@@ -16,7 +16,7 @@
     try {
         // Establish database connection
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3308/usermp5", "root", "");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/usermp5", "root", "root");
 
         // SQL query to fetch status
         String sql = "SELECT status FROM custname WHERE user = ?";

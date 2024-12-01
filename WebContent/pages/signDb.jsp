@@ -7,8 +7,8 @@
     Connection con = null;
     boolean isConnected = false;  // Track whether connection is successful
     try {
-        // Class.forName("com.mysql.cj.jdbc.Driver"); // Load MySQL JDBC driver
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3308/usermp5", "root", ""); // Establish connection
+    	
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/usermp5", "root", "root"); // Establish connection
         isConnected = true;  // Set to true if connection is successful
 
         // HttpSession session = request.getSession(false); // Retrieve the current session, do not create a new one
@@ -32,6 +32,7 @@
 
             int res = stmt.executeUpdate();
             if (res > 0) {
+            	
                 response.sendRedirect("http://localhost/mp/pages/index.jsp");
                 return;
             } else {
@@ -59,7 +60,7 @@
             if (rs.next()) {
                 String user = rs.getString("user");
                 String pass = rs.getString("pass");
-
+                out.println("<script>alert('executed')</script>");
                 if (user.equals(admin) && pass.equals(logpass)) {
                     session.setAttribute("logger", "Signed in as, " + user);
                     session.setAttribute("metric", user);

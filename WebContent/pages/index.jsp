@@ -10,7 +10,7 @@
     <script src="<%= request.getContextPath() %>/script/mainPagescript.js"></script>
 </head>
 <body>
-    <form id="form1" method="post">
+    <form id="form1" method="post"  action="<%= request.getContextPath() %>/pages/signDb.jsp">
 		<div style="display: none;"><!--Hides the menu bar but allows the session to start -->
             <%@ include file="menuBar.jsp" %> <!-- Includes menu button with logged username -->
         </div>

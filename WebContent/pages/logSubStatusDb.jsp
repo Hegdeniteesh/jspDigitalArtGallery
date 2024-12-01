@@ -1,9 +1,9 @@
 <%@ page import="java.sql.*" %>
 <%
     // Database connection details
-    String jdbcURL = "jdbc:mysql://localhost:3308/usermp5";
+    String jdbcURL = "jdbc:mysql://localhost:3306/usermp5";
     String jdbcUsername = "root";
-    String jdbcPassword = "";
+    String jdbcPassword = "root";
     Connection con = null;
 
     try {

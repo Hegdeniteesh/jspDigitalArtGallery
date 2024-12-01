@@ -1,17 +1,16 @@
 <%@ page import="java.sql.*, java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    String jdbcURL = "jdbc:mysql://localhost:3308/usermp5";
+    String jdbcURL = "jdbc:mysql://localhost:3306/usermp5";
     String jdbcUsername = "root";
-    String jdbcPassword = "";
+    String jdbcPassword = "root";
     Connection con = null;
 
     try {
         // Connect to the database
-        Class.forName("com.mysql.cj.jdbc.Driver");
         con = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
-        if (request.getParameter("adminQuery") != null) {
+       
             String dateVal = request.getParameter("date");
             if (dateVal != null && !dateVal.isEmpty()) {
                 String sql3 = "SELECT COUNT(loginTm) AS count FROM entries WHERE loginTm=?";
@@ -55,7 +54,7 @@
                     }
                 }
             }
-        }
+       
     } catch (Exception e) {
         out.println("Error: " + e.getMessage());
     } finally {

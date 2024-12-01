@@ -19,67 +19,49 @@
     %>
     <br>
     <div class="allContainer2">
-        <div class="container2">
-        <% // Image variables and paths
-            String nm1 = "manFloating.jpg";
-            String nm2 = "sadMan_spaced.png";
-            String nm3 = "dragonf2f.jpg";
-            String nm4 = "snekRear.png";
-            String nm5 = "interstellar.png";
-            String nm6 = "spaceCrash_man.png";
-            String nm7 = "stone frnd.png";
-            String nm8 = "unitProduction.png";
-            String nm9 = "facing stone.png";
+    <% 
+        // Array of image names
+        String[] fantasyImages = {
+            "manFloating.jpg", "sadMan_spaced.png", "dragonf2f.jpg", 
+            "snekRear.png", "interstellar.png", "spaceCrash_man.png", 
+            "stone frnd.png", "unitProduction.png", "facing stone.png"
+        };
+        
+        // Base path for fantasy images
+        String fantasyBasePath = "http://localhost/mp/image/fantasy/";
 
-            String link1 = "http://localhost/mp/image/fantasy/" + nm1;
-            String link2 = "http://localhost/mp/image/fantasy/" + nm2;
-            String link3 = "http://localhost/mp/image/fantasy/" + nm3;
-            String link4 = "http://localhost/mp/image/fantasy/" + nm4;
-            String link5 = "http://localhost/mp/image/fantasy/" + nm5;
-            String link6 = "http://localhost/mp/image/fantasy/" + nm6;
-            String link7 = "http://localhost/mp/image/fantasy/" + nm7;
-            String link8 = "http://localhost/mp/image/fantasy/" + nm8;
-            String link9 = "http://localhost/mp/image/fantasy/" + nm9;
-        %>
+        // Loop through the images dynamically
+        for (int i = 0; i < fantasyImages.length; i++) {
+            String imageName = fantasyImages[i];
+            String imagePath = fantasyBasePath + imageName;
+    %>
+    <div class="container2">
         <center>
-            <input type="button" style="background-color: black; border: 1px solid cyan; font-family: Raleway; color: white; position: absolute;" value="premium    ">
-            <img src="http://localhost/mp/image/heart.jpg" style="position: absolute; width: 20px; height:20px; margin-left: 83px; margin-top: 2px;">
-            <img class="contentImage" src="<%= link1 %>">
+            <% if (i % 2 == 0) { %> <!-- Add premium badge for the first image -->
+                <input type="button" style="background-color: black; border: 1px solid cyan; font-family: Raleway; color: white; position: absolute;" value="premium">
+                <img src="<%= request.getContextPath() %>/image/heart.jpg" style="position: absolute; width: 20px; height:20px; margin-left: 83px; margin-top: 2px;">
+            <% } %>
+            <img class="contentImage" src="<%= imagePath %>">
         </center>
-        <% 
-            // Send variables to P_download.jsp for download and view
-            String link = link1;
-            String nm = nm1;
-            request.setAttribute("link", link);
-            request.setAttribute("nm", nm);
-            RequestDispatcher rd = request.getRequestDispatcher("P_download.jsp");
-            rd.include(request, response);
-        %>
-        </div>
-        <div class="container2">
-            <center>
-                <img class="contentImage" src="<%= link2 %>">
-            </center>
-            <a class="hideLink" href="imageViewer.jsp?src=<%= java.net.URLEncoder.encode(link2, "UTF-8") %>" target="_blank">
+        <% if (i % 2 == 0) { %>
+            <%-- Include premium download feature --%>
+            <jsp:include page="P_download.jsp">
+                <jsp:param name="link" value="<%= imagePath %>" />
+                <jsp:param name="nm" value="<%= imageName %>" />
+            </jsp:include>
+        <% } else { %>
+            <%-- View and download buttons for other images --%>
+            <a class="hideLink" href="imageViewer.jsp?src=<%= java.net.URLEncoder.encode(imagePath, "UTF-8") %>" target="_blank">
                 <input type="button" id="View" value="View" class="subBtn">
             </a>
-            <a download="<%= nm2 %>" href="<%= link2 %>">
+            <a download="<%= imageName %>" href="<%= imagePath %>">
                 <input type="button" onclick="thanks()" id="Download" value="Download" class="subBtn">
             </a>
-        </div>
-        <div class="container2">
-            <center>
-                <img class="contentImage" src="<%= link3 %>">
-            </center>
-            <a class="hideLink" href="imageViewer.jsp?src=<%= java.net.URLEncoder.encode(link3, "UTF-8") %>" target="_blank">
-                <input type="button" id="View" value="View" class="subBtn">
-            </a>
-            <a download="<%= nm3 %>" href="<%= link3 %>">
-                <input type="button" onclick="thanks()" id="Download" value="Download" class="subBtn">
-            </a>
-        </div>
-        <!-- Repeat similar containers for the rest of the images -->
+        <% } %>
     </div>
+    <% } %>
+</div>
+
     <div class="PageEnd">
         <p style="text-align: right;">copyright 2024</p>
     </div>

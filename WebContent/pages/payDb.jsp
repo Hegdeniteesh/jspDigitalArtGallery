@@ -22,7 +22,7 @@
     try {
         // Database connection
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/usermp5", "root", "");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/usermp5", "root", "root");
 
         // Update the user's subscription in the database
         String sql = "UPDATE custname SET status = 'premium', subscription = ? WHERE user = ?";

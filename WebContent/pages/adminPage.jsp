@@ -28,11 +28,7 @@
       <center> 
             <p class="pageTitle">Admin Page</p>
             <br>
-            <label class="tnc">Total logins on date:</label>
-            <input type="date" name="date" style="width: 230px; border-radius: 7px;">
-            <br>
-            <label class="tnc">OR</label>
-            <br>
+            
             <label class="tnc">Select a query</label>
             <select name="customQuery" style="border-radius: 7px;">
                 <option value="" selected>select a query</option>

@@ -47,7 +47,8 @@
 <body>
 
 <!-- Image Display -->
-<img src="<%= URLEncoder.encode(imageSrc, "UTF-8") %>" alt="Image">
+<img src="<%= imageSrc %>" alt="Image">
+
 
 <!-- Optional: Add a watermark or overlay message -->
 <div class="overlay" style="background-color:black; opacity:60%">
